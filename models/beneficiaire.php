@@ -19,8 +19,6 @@ class Beneficiaire // Présence du mot-clé class suivi du nom de la classe.
     protected nomparent;
     protected contactparent;
 
-
-
     //les fonctions 
    private  function inscription(){
 
