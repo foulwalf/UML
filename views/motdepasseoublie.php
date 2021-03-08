@@ -135,7 +135,7 @@ header{
                 <a href="accueil.php"><div class="back"><i class="fas fa-arrow-left"></i></div></a>
                <h1>Mot de passe oublié</h1>
                 <label><b>Matricule</b></label>
-                <input type="password" placeholder="Entrer votre matricule" name="matricule" required style="outline: none;">
+                <input type="text" placeholder="Entrer votre matricule" name="matricule" required style="outline: none;">
                 <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
