@@ -6,6 +6,7 @@ if (isset($_GET['action'])) {
     header('location: ../views/authentification.php');
 } else{
     if (isset($_POST['mdp_oublie'])) {
+        include('../models/Beneficiaire.php');
         $recuperation = Beneficiaire::db()->prepare('SELECT mdp FROM beneficiaire WHERE matricule = ? ');
         $execution = $connexion->execute(array($_POST['matricule']));
         $recuperation = $recuperation->fetch();
