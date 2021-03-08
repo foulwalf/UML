@@ -19,7 +19,7 @@ class Beneficiaire {// Présence du mot-clé class suivi du nom de la classe.
     public $_valide;
 
     //constructeur de création de la classe Beneficiaire
-    function __construct1($nomBeneficiaire, $prenomBeneficiaire, $dateDeNaissance, $lieuDeNaissance, $diplome, $filiere, $niveau, $email, $contact, $contactParent, $mdp, $fichiers){
+    function __construct($nomBeneficiaire, $prenomBeneficiaire, $dateDeNaissance, $lieuDeNaissance, $diplome, $filiere, $niveau, $email, $contact, $contactParent, $mdp, $fichiers){
         $this->_nomBeneficiaire = $nomBeneficiaire;
         $this->_prenomBeneficiaire = $prenomBeneficiaire;
         $this->_dateDeNaissance = $dateDeNaissance;
@@ -60,12 +60,8 @@ class Beneficiaire {// Présence du mot-clé class suivi du nom de la classe.
     public  function Inscription(){
         try {
             $inscription = self::db()->prepare('INSERT INTO beneficiaire(nombenef, prenombenef, datenaissbenef, lieudenaissbenef, diplome, filiere, email, contact, contactparent, niveau, mdp, matricule) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)');
-            $execution = $inscription->execute(array($this->_nomBeneficiaire, $this->_prenomBeneficiaire,   $this->_dateDeNaissance, $this->_lieuDeNaissance, $this->_diplome, $this->_filiere, $this->_email,    $this->_contact, $this->_contactparent, $this->_niveau, $this->_mdp, $this->_matricule));
-            if ($execution) {
-                return ['etat' => true , 'id' => self::db()->lastInsertId(), 'matricule' => $this->_matricule];
-            } else {
-                return ['etat' => false];
-            }
+            $execution = $inscription->execute(array($this->_nomBeneficiaire, $this->_prenomBeneficiaire,   $this->_dateDeNaissance, $this->_lieuDeNaissance, $this->_diplome, $this->_filiere, $this->_email, $this->_contact, $this->_contactparent,$this->_niveau, $this->_mdp, $this->_matricule));
+            return $execution;
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -75,11 +71,18 @@ class Beneficiaire {// Présence du mot-clé class suivi du nom de la classe.
     //enregistrement de fichiers 
     public function Fichiers($tableauDeFichiers){
         try {
-            $nomDuDossierFichiers = "../fichiers/".$this->_matricule.'/fichiers';
-            $nomDuDossierPhoto = "../fichiers/".$this->_matricule.'/photo';
-            mkdir($nomDuDossierFichiers, 0777);
-            mkdir($nomDuDossierPhoto, 0777);
+            $nomDuDossierFichiers = "../fichiers/fichiers/".$this->_matricule;
+            $nomDuDossierPhoto = "../fichiers/photo/".$this->_matricule;
+            if (!is_dir($nomDuDossierFichiers)) {
+                mkdir($nomDuDossierFichiers, 0777);
+            }
+            
+            if(!is_dir($nomDuDossierPhoto)){
+                mkdir($nomDuDossierPhoto, 0777);
+            }
+            
             $chargements = [];
+
             $i = 0;
             foreach ($tableauDeFichiers as $fichier){
                 if($i == 2 ){
