@@ -230,13 +230,13 @@
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="niveau">
                                             <option></option>
-                                            <option >Licence 1</option>
-                                            <option >Licence 2</option>
-                                            <option >BTS 1</option>
-                                            <option >BTS 2</option>
-                                            <option >Licence 3</option>
-                                            <option >Master 1</option>
-                                            <option >Master 2</option>
+                                            <option >Licence1</option>
+                                            <option >Licence2</option>
+                                            <option >BTS1</option>
+                                            <option >BTS2</option>
+                                            <option >Licence3</option>
+                                            <option >Master1</option>
+                                            <option >Master2</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -267,7 +267,7 @@
                             <div class="name">Photo:</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="file" name="motdepasse" accept="image/png, image/jpeg">
+                                    <input class="input--style-5" type="file" name="photo" accept="image/png, image/jpeg, image/jpg">
                                 </div>
                             </div>
                         </div>
@@ -295,14 +295,14 @@
     </div>
  
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="assets/vendor/select2/select2.min.js"></script>
+    <script src="assets/vendor/datepicker/moment.min.js"></script>
+    <script src="assets/vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="assets/js/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
