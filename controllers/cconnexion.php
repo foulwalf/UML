@@ -5,7 +5,15 @@ if (isset($_GET['action'])) {
     session_destroy();
     header('location: ../views/authentification.php');
 } else{
-
+    if (isset($_POST['mdp_oublie'])) {
+        include('../models/Beneficiaire.php');
+        $recuperation = Beneficiaire::db()->prepare('SELECT mdp FROM beneficiaire WHERE matricule = ? ');
+        $execution = $recuperation->execute(array($_POST['matricule']));
+        $recuperation = $recuperation->fetch();
+        session_start();
+        $_SESSION['mdp_recupere'] = $recuperation['mdp'];
+        header('location: ../views/motdepasserecup.php');
+    }
     include('../models/Beneficiaire.php');
 
     $username = $_POST['username'];
