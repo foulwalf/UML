@@ -16,7 +16,7 @@ $phoneparent = $_POST['phoneparent'];
 $filiere = $_POST['filiere'];
 $niveau = $_POST['niveau'];
 $mdp = $_POST['motdepasse'];
-$fichiers = [$_FILES['cni'],$_FILES['bac']];
+$fichiers = [$_FILES['cni'], $_FILES['bac'], $_FILES['photo']];
 
 //création d'une instance de la classe bénéficiaire avec pour attributs les données recuprées plus hauts
 
@@ -27,21 +27,20 @@ $benef = new Beneficiaire($nom, $prenom, $datedenaissance, $lieudenaissance, $di
 $inscription = $benef->Inscription();
 //si l'inscription (l'ajout des données dans la bd) est effectuée avec succès on passe au chargement des fichiers sur le serveur
 
-if ($inscription) {
-    $fichiers = $benef->Fichiers($nom,$prenom,$inscription['id'],$fichiers);
+if ($inscription == true) {
+    $fichiers = $benef->Fichiers($fichiers);
     if ($fichiers) {
         //si le chargements des fichiers est effectué avec succès on redirige l'utilisateur vers la page de succès
         session_start();
-        $_SESSION['matricule'] = $inscription['matricule'];
+        $_SESSION['matricule'] = $benef->_matricule;
         header('location: ../views/succesins.php');
     } else {
         //sinon on supprime l'enregistrement effectué dans la bd et on redirige l'utilisateur vers la page d'erreur
 
-        $suppression = $benef->Supprimer($inscription['id']);
+        $suppression = $benef->Supprimer();
         header('location: ../views/erreurins.php');
     }
 } else{
     //si l'inscription (l'ajout des données dans la bd) n'est pas effectué on redirige l'utilisateur vers la page d'erreur
-
     header('location: ../views/erreurins.php');
 }

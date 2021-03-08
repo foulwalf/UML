@@ -162,7 +162,14 @@ font-family: 'Ubuntu', sans-serif;
             color: white;
             font-weight: bold;
         }
-
+        .text{
+                margin-top: 10%;
+    color: white;
+    font-size: 2rem;
+    background: rgba(46, 133, 108,.5);
+    padding: 0px 5%;
+    font-weight: bold;
+        }
     </style>
   </head>
   <body>
@@ -188,8 +195,11 @@ font-family: 'Ubuntu', sans-serif;
             </ul>
         </nav>
     </header>
-
+        
   <div class="bouton"> 
+  <div class="text">
+            <p>Bienvenue dans l'espace d'inscription à AGITEL-FORMATION </p>
+        </div>
     <!-- Bouton d'inscription -->
     <button class="inscription" onclick="window.location.href = 'inscription.php'" >S'inscrire</button>
   

@@ -35,7 +35,7 @@ if (isset($_GET['action'])) {
                 case 1:
                     session_start();
                     $_SESSION['user'] = $beneficiaire_connecte;
-                    $photos = scandir('../fichiers/'.$beneficiaire_connecte['matricule'].'/photo');
+                    $photos = scandir('../fichiers/photo/'.$beneficiaire_connecte['idbenef']);
                     $photos = array_slice($photos,2);
                     $photo = $photos[0];
                     $_SESSION['user']['photo'] = $photo;

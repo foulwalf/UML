@@ -1,7 +1,5 @@
 <?php
 session_start();
-$maticule = $_SESSION['matricule'];
-session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +18,7 @@ session_destroy();
 			left: 50%;
 			transform: translate(-50%,-50%);
 			width: 60%;
-			padding: 40px 0;
+			padding: 40px 20px;
 			text-align: center;
 			background-color:white;
 			border-radius: 5px;
@@ -96,7 +94,7 @@ body{
     </header>
 <div class="cadre">
     <div class="text">
-	    <p>Votre inscription a été enregistrée, veuillez patienter 72H avant de vous connecter à votre espace étudiant grace à votre matricule: <b><?= $matricule ?></b> et le mot de  passe définit dans votre fomrulaire d'inscription. Ce matricule vous servira de code de paiement de votre scolarité au cours de cette année academique.</p>
+	    <p>Votre inscription a été enregistrée, veuillez patienter 72H avant de vous connecter à votre espace étudiant grace à votre matricule: <b><?php echo $_SESSION['matricule']; session_destroy(); ?></b> et le mot de  passe définit dans votre fomrulaire d'inscription. Ce matricule vous servira de code de paiement de votre scolarité au cours de cette année academique.</p>
         <div>
             <a href="accueil.php"><button>Accueil&nbsp;&nbsp;<i class="fas fa-home"></i></button></a>
         </div>
