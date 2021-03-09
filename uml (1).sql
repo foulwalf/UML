@@ -53,24 +53,6 @@ CREATE TABLE `beneficiaire` (
 -- Déchargement des données de la table `beneficiaire`
 --
 
-INSERT INTO `beneficiaire` (`idbenef`, `nombenef`, `prenombenef`, `datenaissbenef`, `lieudenaissbenef`, `diplome`, `filiere`, `email`, `contact`, `nomparent`, `contactparent`, `niveau`, `mdp`, `matricule`, `valide`, `etat`, `motif`) VALUES
-(1, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'Informatique', 'ale@gmail.com', '89638489', NULL, '5778', 'Licence 1', 'dd', '05403-LP1', NULL, 0, 'vous documents ne sont pas conformes'),
-(2, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'Informatique', 'ale@gmail.com', '89638489', NULL, '5778', 'Licence 1', 'dd', '3BBF0-LP1', 1, 1, NULL),
-(3, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'g', '0D6D4-LP1', NULL, NULL, NULL),
-(4, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'dd', '461FA-LP1', NULL, NULL, NULL),
-(5, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ddd', 'C59FC-LP1', NULL, NULL, NULL),
-(6, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ss', 'D4B44-LP1', NULL, NULL, NULL),
-(7, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ss', 'B0C07-LP1', NULL, NULL, NULL),
-(8, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ss', 'D6076-LP1', NULL, NULL, NULL),
-(9, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ss', '0B546-LP1', NULL, NULL, NULL),
-(10, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'dd', 'A90F4-LP1', NULL, NULL, NULL),
-(11, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'dd', 'B3A00-LP1', NULL, NULL, NULL),
-(12, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ss', '9EE84-LP1', NULL, NULL, NULL),
-(13, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ss', '896D0-LP1', NULL, NULL, NULL),
-(14, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'dd', '80B4D-LP1', NULL, NULL, NULL),
-(15, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'ddd', '04205-LP1', NULL, NULL, NULL),
-(16, 'dfzf', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'dd', 'EC4A0-LP1', NULL, NULL, NULL),
-(17, 'alexis', 'jkj', '5111-02-10', 'jklkjkjlkjkljkj', 'bac', 'info', 'ale@gmail.com', '89638489', NULL, '5778', 'lp1', 'jj', '06DE8-LP1', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -90,8 +72,7 @@ CREATE TABLE `versement` (
 -- Déchargement des données de la table `versement`
 --
 
-INSERT INTO `versement` (`idversement`, `codeversement`, `dateversement`, `montantversement`, `beneficiaire_idbenef`) VALUES
-(1, '3BBF0-LP1-001', '2021-03-07', 10000, 2);
+
 
 --
 -- Index pour les tables déchargées

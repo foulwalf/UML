@@ -345,7 +345,7 @@ if (!isset($_SESSION['user'])) {
         <div class="card">
             <div class="card-left">
                 <div class="card-photo">
-                    <img src="../fichiers/photo/<?=$user['idbenef']?>/<?=$user['photo']?>" alt="">
+                    <img src="../fichiers/photo/<?=$user['matricule']?>/<?=$user['photo']?>" alt="">
                 </div>
                 <div class="card-details">
                     <div style="font-weight: bold;">

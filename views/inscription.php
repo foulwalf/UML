@@ -188,7 +188,7 @@
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             
-                                            <label class="label--desc">Diplome</label>
+                                            
                                              <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="diplome" required>
                                             <option></option>
@@ -199,12 +199,13 @@
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
+                                    <label class="label--desc">Diplome obtenu</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             
-                                            <label class="label--desc">Filière souhaitée</label>
+                                            
                                              <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="filiere" required>
                                             <option></option>
@@ -216,7 +217,9 @@
                                             <option >Pub</option>
                                         </select>
                                         <div class="select-dropdown"></div>
-                                    </div>
+                                    </div>                                        
+                                    <label class="label--desc">Filière souhaitée</label>
+
                                         </div>
                                     </div>
                                     
@@ -240,6 +243,7 @@
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
+                                    <label class="label--desc">Classe</label>
                                 </div>
                             </div>
                         </div>

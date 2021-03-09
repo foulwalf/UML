@@ -86,14 +86,14 @@ class Beneficiaire {// Présence du mot-clé class suivi du nom de la classe.
             $i = 0;
             foreach ($tableauDeFichiers as $fichier){
                 if($i == 2 ){
-                    $cible = $nomDuDossierPhoto.'/'.$fichier['name'].'.'.PATHINFO($fichier['name'], PATHINFO_EXTENSION);
+                    $cible = $nomDuDossierPhoto.'/'.$fichier['name'];
                     if(move_uploaded_file($fichier['tmp_name'],$cible)){
                         array_push($chargements, true);
                     } else{
                         array_push($chargements, false);
                     }
                 } else{
-                    $cible = $nomDuDossierFichiers.'/'.$fichier['name'].'.'.PATHINFO($fichier['name'], PATHINFO_EXTENSION);
+                    $cible = $nomDuDossierFichiers.'/'.$fichier['name'];
                     if(move_uploaded_file($fichier['tmp_name'],$cible)){
                         array_push($chargements, true);
                     } else{
