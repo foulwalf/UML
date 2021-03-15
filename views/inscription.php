@@ -13,8 +13,15 @@
 
     <!-- Main CSS-->
     <link href="assets/css/main.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/alertifyjs/css/semantic.css">
     <style type="text/css">
-
+        .disabled{
+            filter: brightness(50%);
+        }
+        .disabled:hover{
+            cursor: not-allowed;
+        }
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Ubuntu:wght@300&display=swap');
         body{
             margin: 0;
@@ -91,21 +98,21 @@
                     <h2 class="title">INSCRIPTION AGITEL FORMATION</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="../controllers/cinscription.php" enctype="multipart/form-data">
+                    <form method="POST" action="../controllers/cinscription.php" enctype="multipart/form-data" id="form">
                         <div class="form-row m-b-55">
                             <div class="name">Nom</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name" required>
-                                            <label class="label--desc">Nom</label>
+                                            <input class="input--style-5" type="text" name="first_name" required id="nom">
+                                            <label class="label--desc" for="nom">Nom</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name" required>
-                                            <label class="label--desc">Prenom</label>
+                                            <input class="input--style-5" type="text" name="last_name" required id="pren">
+                                            <label class="label--desc" for="pren">Prenom</label>
                                         </div>
                                     </div>
                                 </div>
@@ -116,8 +123,9 @@
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="sexe" required>
-                                            
+                                    <label for="sexe" style="display: none;">Sexe</label>
+                                        <select name="sexe" required id="sexe">
+                                            <option value=""></option>
                                             <option value="H">HOMME</option>
                                             <option value="F">FEMME</option>
                                             
@@ -133,7 +141,8 @@
                             <div class="name">Date naissance</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="date" name="datedenaissance" required>
+                                <label for="dn" style="display: none;">Date naissance</label>
+                                    <input class="input--style-5" type="date" name="datedenaissance" required id="dn">
                                 </div>
                             </div>
                         </div>
@@ -141,7 +150,8 @@
                             <div class="name">Lieu naissance</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="lieudenaissance" required>
+                                    <label for="ln" style="display: none;">Lieu naissance</label>
+                                    <input class="input--style-5" type="text" name="lieudenaissance" required id="ln">
                                 </div>
                             </div>
                         </div>
@@ -149,7 +159,8 @@
                             <div class="name">Email etudiant</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="emailetudiant" required>
+                                <label for="email" style="display: none;">Adresse email</label>
+                                    <input class="input--style-5" type="email" name="emailetudiant" required id="email">
                                 </div>
                             </div>
                         </div>
@@ -160,8 +171,8 @@
                                     
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone" required>
-                                            <label class="label--desc">Numero</label>
+                                            <input class="input--style-5" type="text" name="phone" id="num" required>
+                                            <label class="label--desc" for="num">Numero</label>
                                         </div>
                                     </div>
                                 </div>
@@ -171,11 +182,10 @@
                             <div class="name">Telephone parent</div>
                             <div class="value">
                                 <div class="row row-refine">
-                                   
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phoneparent" required>
-                                            <label class="label--desc">Numero</label>
+                                            <input class="input--style-5" type="text" name="phoneparent" required id="numparent">
+                                            <label class="label--desc" for="numparent">Numero parent</label>
                                         </div>
                                     </div>
                                 </div>
@@ -190,7 +200,7 @@
                                             
                                             
                                              <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="diplome" required>
+                                        <select name="diplome" required id="dip">
                                             <option></option>
                                             <option value="bac">BAC</option>
                                             <option value="bts">BTS</option>
@@ -199,7 +209,7 @@
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
-                                    <label class="label--desc">Diplome obtenu</label>
+                                    <label class="label--desc" for="dip">Diplome obtenu</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
@@ -207,7 +217,7 @@
                                             
                                             
                                              <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="filiere" required>
+                                        <select name="filiere" id="fil" required>
                                             <option></option>
                                             <option >Informatique</option>
                                             <option >Finance-compta</option>
@@ -218,7 +228,7 @@
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>                                        
-                                    <label class="label--desc">Filière souhaitée</label>
+                                    <label class="label--desc" for="fil">Filière souhaitée</label>
 
                                         </div>
                                     </div>
@@ -231,7 +241,7 @@
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="niveau">
+                                        <select name="niveau" id="niveau">
                                             <option></option>
                                             <option >Licence1</option>
                                             <option >Licence2</option>
@@ -243,7 +253,7 @@
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
-                                    <label class="label--desc">Classe</label>
+                                    <label class="label--desc" for="niveau">Classe</label>
                                 </div>
                             </div>
                         </div>
@@ -253,14 +263,14 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="file" name="cni" required accept=".pdf, .pnd, .jpg, .jpeg">
-                                            <label class="label--desc">CNI</label>
+                                            <input class="input--style-5" type="file" id="cni" name="cni" required accept=".pdf, .pnd, .jpg, .jpeg">
+                                            <label class="label--desc" for="cni">CNI</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="file" name="bac" required accept=".pdf, .png, .jpg, .jpeg">
-                                            <label class="label--desc">BAC</label>
+                                            <input class="input--style-5" type="file" name="bac" id="bac" required accept=".pdf, .png, .jpg, .jpeg">
+                                            <label class="label--desc" for="bac">BAC</label>
                                         </div>
                                     </div>
                                 </div>
@@ -271,7 +281,8 @@
                             <div class="name">Photo:</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="file" name="photo" accept="image/png, image/jpeg, image/jpg">
+                                    <label for="photo"></label>
+                                    <input class="input--style-5" type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/jpg">
                                 </div>
                             </div>
                         </div>
@@ -279,13 +290,13 @@
                             <div class="name">Mots de passe</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="password" name="motdepasse" required>
+                                    <input class="input--style-5" type="password" name="motdepasse" required id="psw" onkeyup="active();">
                                 </div>
                             </div>
                         </div>
                         <div class="place">
                             <div class="gauche">
-                                <button class="btn btn--radius-2 btn--vert" type="submit" style="background:#2e856c;">VALIDER</button>
+                                <button class="btn btn--radius-2 btn--vert" type="submit" style="background:#2e856c;" onclick="valide()" id="valider">VALIDER</button>
                             </div>
                             <div class="droit">
                             <a href="accueil.php" class="btn btn--radius-2 btn--rouge" style="float:right;margin-right:0;text-decoration:none;">ANNULER</a>
@@ -304,9 +315,50 @@
     <script src="assets/vendor/select2/select2.min.js"></script>
     <script src="assets/vendor/datepicker/moment.min.js"></script>
     <script src="assets/vendor/datepicker/daterangepicker.js"></script>
-
-    <!-- Main JS-->
+    <script src="assets/alertifyjs/alertify.min.js"></script>
     <script src="assets/js/global.js"></script>
+    
+    <script>
+    var psw = document.getElementById("psw");
+    var valider = document.getElementById("valider")
+    valider.disabled = true;
+        valider.classList.add("disabled");
+    function active(){
+        
+    if(psw.value == ""){
+        valider.disabled = true;
+        valider.classList.add("disabled");
+    } else{
+        valider.disabled = false;
+        valider.classList.remove("disabled");
+    }
+    }
+    function valide(){
+        var message = `
+                Vérification des données
+
+                Nom : ${document.getElementById("nom").value}
+                Prénoms : ${document.getElementById("pren").value}
+                Sexe : ${document.getElementById("sexe").value}
+                Date de naissance : ${document.getElementById("dn").value}
+                Lieu de naissance : ${document.getElementById("ln").value}
+                Adresse Email : ${document.getElementById("email").value}
+                Numéro de téléphone : ${document.getElementById("num").value}
+                Numéro du parent : ${document.getElementById("numparent").value}
+                Diplome obtenu : ${document.getElementById("dip").value}
+                Filière souhaitée : ${document.getElementById("fil").value}
+                Niveau : ${document.getElementById("niveau").value}
+
+                Veuillez valider par OK si les données son correctes ou annuler par ANNULER pour modifier les doonnées.
+                `;
+
+            confirm(message)
+    }
+            
+
+    </script>
+    <!-- Main JS-->
+    
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 

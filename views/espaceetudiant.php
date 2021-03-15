@@ -362,8 +362,8 @@ if (!isset($_SESSION['user'])) {
                 <div class="card-buttons">
                     <div>
                         <?php if($user['valide'] !== "1" ) { ?><button onclick="valider();">Valider mon inscription</button> <?php } ?>
-                        <button onclick="consulter();">Consulter le relicat de ma scolarité</button>
-                        <button onclick="plan();">Consulter mon emploi du temps</button>
+                        <?php if($user['valide'] === "1" ) { ?><button onclick="consulter();">Consulter le relicat de ma scolarité</button><?php } ?>
+                            <?php if($user['valide'] === "1" ) { ?><button onclick="plan();">Consulter mon emploi du temps</button><?php } ?>
                     </div>
                 </div>
             </div>
@@ -404,8 +404,13 @@ if (!isset($_SESSION['user'])) {
             </div>
             <div class="body" style="margin: 0;font-weight: bold;">
                 <div class="planning">
-                    <div><b>Date d'ajout:</b>&nbsp;<?= $_SESSION['emploiDuTemps'][0] ?></div>
-                    <div><a href="<?= $_SESSION['emploiDuTemps'][1] ?>" target="_blank"><button><span>Télécharger&nbsp;&nbsp;<i class="fas fa-download"></i></span></button></a></div>
+                    <?php if($_SESSION['emploiDuTemps'] == false){?>
+                        <div><b>Aucun emploi du temps diponible</b></div>
+                    <?php } ?>
+                    <?php if(isset($_SESSION['emploiDuTemps'][0])) {?>
+                        <div><b>Date d'ajout:</b>&nbsp;<?= $_SESSION['emploiDuTemps'][0] ?></div>
+                        <div><a href="<?= $_SESSION['emploiDuTemps'][1] ?>" target="_blank"><button><span>Télécharger&nbsp;&nbsp;<i class="fas fa-download"></i></span></button></a></div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

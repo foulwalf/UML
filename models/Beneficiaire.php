@@ -208,7 +208,11 @@ class Beneficiaire {// Présence du mot-clé class suivi du nom de la classe.
     public function ConsultationDeEmploiDuTemps(){
         $dossier = '../Emploi du temps/'.$this->_filiere.'/'.$this->_niveau;
         $emploisDuTemps = [];
-            if ($handle = opendir($dossier)) {
+        
+        if(!is_readable($dossier)){
+            return false;
+        }
+        if($handle = opendir($dossier)) {
             while (false !== ($fichier = readdir($handle))) {
                 if ($fichier !== "." && $fichier !== "..") {
                     array_push($emploisDuTemps, $fichier);

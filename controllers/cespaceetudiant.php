@@ -6,6 +6,9 @@ $benef->create($_SESSION['user']['idbenef'], $_SESSION['user']['matricule'], $_S
 
 $_SESSION['scolarite'] = $benef->ConsultationDeSolde();
 
+
+
+
 $_SESSION['emploiDuTemps'] = $benef->ConsultationDeEmploiDuTemps();
 if (isset($_POST['code_v'])) {
     $_SESSION['validation'] = $benef->ValidationDInstcription($_POST['code_v']);
