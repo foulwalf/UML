@@ -113,9 +113,9 @@ font-family: 'Ubuntu', sans-serif;
         background-image:url(assets/img/agitel2.png);
         background-size: cover;
         background-repeat: no-repeat;
-        backdrop-filter: blur(5px);
+        /* backdrop-filter: blur(5px); */
         height: 97vh;
-        width: 99vw;
+        width: 100vw;
     }
 
     .bouton{

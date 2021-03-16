@@ -296,7 +296,7 @@
                         </div>
                         <div class="place">
                             <div class="gauche">
-                                <button class="btn btn--radius-2 btn--vert" type="submit" style="background:#2e856c;" onclick="valide()" id="valider">VALIDER</button>
+                                <button class="btn btn--radius-2 btn--vert" type="submit" style="background:#2e856c;" onclick="return valide()" id="valider">VALIDER</button>
                             </div>
                             <div class="droit">
                             <a href="accueil.php" class="btn btn--radius-2 btn--rouge" style="float:right;margin-right:0;text-decoration:none;">ANNULER</a>
@@ -308,7 +308,6 @@
             </div>
         </div>
     </div>
- 
     <!-- Jquery JS-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
