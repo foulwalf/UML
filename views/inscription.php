@@ -328,7 +328,7 @@
         valider.disabled = true;
         valider.classList.add("disabled");
     } else{
-        valider.disabled = false;
+        valider.disabled = false
         valider.classList.remove("disabled");
     }
     }
